@@ -1,0 +1,68 @@
+app = "xe-palworld"
+primary_region = "yyz"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[[mounts]]
+  source = "steam"
+  destination = "/home"
+  initial_size = "20GB"
+  auto_extend_size_threshold = 80
+  auto_extend_size_increment = "1GB"
+  auto_extend_size_limit = "20GB"
+
+[[services]]
+  protocol = "udp"
+  internal_port = 27015
+  processes = ["app"]
+  
+  [[services.ports]]
+    port = 27015
+
+[[services]]
+  protocol = "udp"
+  internal_port = 15636
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 15636
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 15636
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 15636
+
+[[services]]
+  protocol = "udp"
+  internal_port = 15637
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 15637
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 15637
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 15637
+
+[[services]]
+  protocol = "udp"
+  internal_port = 8080
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 8080
+
+[[services]]
+  protocol = "udp"
+  internal_port = 8081
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 8081
