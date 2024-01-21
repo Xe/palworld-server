@@ -5,7 +5,7 @@ kill_timeout = "5s"
 
 [[mounts]]
   source = "steam"
-  destination = "/home"
+  destination = "/home/steam/palworld"
   initial_size = "20GB"
   auto_extend_size_threshold = 80
   auto_extend_size_increment = "1GB"
@@ -13,56 +13,16 @@ kill_timeout = "5s"
 
 [[services]]
   protocol = "udp"
-  internal_port = 27015
+  internal_port = 8211
   processes = ["app"]
   
   [[services.ports]]
-    port = 27015
-
-[[services]]
-  protocol = "udp"
-  internal_port = 15636
-  processes = ["app"]
-
-  [[services.ports]]
-    port = 15636
+    port = 8211
 
 [[services]]
   protocol = "tcp"
-  internal_port = 15636
+  internal_port = 8211
   processes = ["app"]
 
   [[services.ports]]
-    port = 15636
-
-[[services]]
-  protocol = "udp"
-  internal_port = 15637
-  processes = ["app"]
-
-  [[services.ports]]
-    port = 15637
-
-[[services]]
-  protocol = "tcp"
-  internal_port = 15637
-  processes = ["app"]
-
-  [[services.ports]]
-    port = 15637
-
-[[services]]
-  protocol = "udp"
-  internal_port = 8080
-  processes = ["app"]
-
-  [[services.ports]]
-    port = 8080
-
-[[services]]
-  protocol = "udp"
-  internal_port = 8081
-  processes = ["app"]
-
-  [[services.ports]]
-    port = 8081
+    port = 8211
